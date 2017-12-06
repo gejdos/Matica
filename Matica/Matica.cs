@@ -33,7 +33,7 @@ namespace Matica
             return matica;
         }
 
-        public static int[,] Spocitaj(int[,] M1, int[,] M2)
+        public static void Spocitaj(int[,] M1, int[,] M2)
         {
             int[,] novaMatica = new int[M1.GetLength(0), M1.GetLength(1)];
 
@@ -45,7 +45,8 @@ namespace Matica
                 }
             }
 
-            return novaMatica;
+            
+
         }
     }
 }

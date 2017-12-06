@@ -12,7 +12,6 @@ namespace Matica
         {
             int[,] matica1 = Matica.VytvorMaticu(4, 3);
             int[,] matica2 = Matica.VytvorMaticu(4, 3);
-            Console.WriteLine(Matica.Spocitaj(matica1, matica2));
 
             Console.ReadKey();
         }
