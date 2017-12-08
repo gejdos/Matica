@@ -18,7 +18,12 @@ namespace Matica
             }
         }
 
-        public int[,] NovaMatica()
+        public Matica()
+        {
+            NovaMatica();
+        }
+
+        public void NovaMatica()
         {
             Random r = new Random();
 
@@ -29,14 +34,12 @@ namespace Matica
                     matica[i, j] = r.Next(1, 11);
                 }             
             }
-
-            return matica;
         }
 
-        public int[,] MaticaIdentity()
+        public int[,] MaticaIdentity(int n)
         {
 
-            matica = new int[3, 3];
+            matica = new int[n, n];
 
             for (int i = 0; i < matica.GetLength(0); i++)
             {
