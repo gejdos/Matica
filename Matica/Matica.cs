@@ -6,17 +6,17 @@ namespace Matica
     {
         public int[,] matica = new int[2, 3];
 
-        public int this[int x, int y]
-        {
-            get
-            {
-                return matica[x, y];
-            }
-            set
-            {
-                matica[x, y] = value;
-            }
-        }
+        //public int this[int x, int y]
+        //{
+        //    get
+        //    {
+        //        return matica[x, y];
+        //    }
+        //    set
+        //    {
+        //        matica[x, y] = value;
+        //    }
+        //}
 
         public Matica()
         {

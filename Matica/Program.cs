@@ -16,7 +16,7 @@ namespace Matica
                     Console.WriteLine(M1.matica[i, j]);
                 }
             }
-
+            
             Console.WriteLine("---------------");
 
             Matica M2 = new Matica();
