@@ -8,12 +8,17 @@ namespace Matica
 {
     class Matica
     {
+        public int[,] matica = new int[2, 3];
 
-        public static int[,] VytvorMaticu(int rozmer1, int rozmer2)
+        public Matica()
         {
-            int[,] matica = new int[rozmer1, rozmer2];
             Random r = new Random();
+            VytvorMaticu(r);
+        }
 
+        public void VytvorMaticu(Random r)
+        {
+            
             for (int i = 0; i < matica.GetLength(0); i++)
             {
                 for (int j = 0; j < matica.GetLength(1); j++)
@@ -22,31 +27,57 @@ namespace Matica
                 }             
             }
 
-            for (int i = 0; i < matica.GetLength(0); i++)
+           /* for (int i = 0; i < matica.GetLength(0); i++)
             {
                 for (int j = 0; j < matica.GetLength(1); j++)
                 {
                     Console.WriteLine(matica[i, j]);
-                }
-            }
-
-            return matica;
+                }*/
         }
 
-        public static void Spocitaj(int[,] M1, int[,] M2)
+        public static Matica operator +(Matica M1, Matica M2)
         {
-            int[,] novaMatica = new int[M1.GetLength(0), M1.GetLength(1)];
-
-            for (int i = 0; i < M1.GetLength(0); i++)
+            Matica M3 = new Matica();
+            for (int i = 0; i < M1.matica.GetLength(0); i++)
             {
-                for (int j = 0; j < M1.GetLength(1); j++)
+                for (int j = 0; j < M1.matica.GetLength(1); j++)
                 {
-                    novaMatica[i, j] = M1[i, j] + M2[i, j];
+                    M3.matica[i, j] = M1.matica[i, j] + M2.matica[i, j];
                 }
+
+            }
+            return M3;
+        }
+
+        public static Matica operator -(Matica M1, Matica M2)
+        {
+            Matica M3 = new Matica();
+            for (int i = 0; i < M1.matica.GetLength(0); i++)
+            {
+                for (int j = 0; j < M1.matica.GetLength(1); j++)
+                {
+                    M3.matica[i, j] = M1.matica[i, j] - M2.matica[i, j];
+                }
+
+            }
+            return M3;
+        }
+
+        public static Matica operator *(Matica M1, Matica M2)
+        {
+            Matica M3 = new Matica();
+            for (int i = 0; i < M1.matica.GetLength(0); i++)
+            {
+                for (int j = 0; j < M1.matica.GetLength(1); j++)
+                {
+                    M3.matica[i, j] = M1.matica[i, j] * M2.matica[i, j];
+                }
+
             }
 
-            
-
+            return M3;
         }
     }
+
 }
+
