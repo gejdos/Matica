@@ -12,27 +12,20 @@ namespace Matica
 
         public Matica()
         {
+
             Random r = new Random();
             VytvorMaticu(r);
         }
 
-        public void VytvorMaticu(Random r)
+        private void VytvorMaticu(Random r)
         {
-            
             for (int i = 0; i < matica.GetLength(0); i++)
             {
                 for (int j = 0; j < matica.GetLength(1); j++)
                 {
-                    matica[i, j] = r.Next(21);
+                    matica[i, j] = r.Next(1, 11);
                 }             
             }
-
-           /* for (int i = 0; i < matica.GetLength(0); i++)
-            {
-                for (int j = 0; j < matica.GetLength(1); j++)
-                {
-                    Console.WriteLine(matica[i, j]);
-                }*/
         }
 
         public static Matica operator +(Matica M1, Matica M2)
