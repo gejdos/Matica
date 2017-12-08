@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Matica
 {
     class Matica
     {
         public int[,] matica = new int[2, 3];
+
         public int this[int x, int y]
         {
             get
@@ -21,15 +18,10 @@ namespace Matica
             }
         }
 
-        public Matica()
+        public int[,] NovaMatica()
         {
-
             Random r = new Random();
-            VytvorMaticu(r);
-        }
 
-        private void VytvorMaticu(Random r)
-        {
             for (int i = 0; i < matica.GetLength(0); i++)
             {
                 for (int j = 0; j < matica.GetLength(1); j++)
@@ -37,6 +29,31 @@ namespace Matica
                     matica[i, j] = r.Next(1, 11);
                 }             
             }
+
+            return matica;
+        }
+
+        public int[,] MaticaIdentity()
+        {
+
+            matica = new int[3, 3];
+
+            for (int i = 0; i < matica.GetLength(0); i++)
+            {
+                for (int j = 0; j < matica.GetLength(1); j++)
+                {
+                    if (i == j)
+                    {
+                        matica[i, j] = 1;
+                    }
+                    else
+                    {
+                        matica[i, j] = 0;
+                    }        
+                }
+            }
+
+            return matica;
         }
 
         public static Matica operator +(Matica M1, Matica M2)
@@ -62,13 +79,14 @@ namespace Matica
                 {
                     M3.matica[i, j] = M1.matica[i, j] - M2.matica[i, j];
                 }
-
             }
+
             return M3;
         }
 
         public static Matica operator *(Matica M1, Matica M2)
         {
+
             Matica M3 = new Matica();
             for (int i = 0; i < M1.matica.GetLength(0); i++)
             {

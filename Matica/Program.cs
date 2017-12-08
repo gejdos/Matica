@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Matica
 {
@@ -11,63 +7,75 @@ namespace Matica
         static void Main(string[] args)
         {
 
-            Matica matica1 = new Matica();
-            for (int i = 0; i < matica1.matica.GetLength(0); i++)
+            Matica M1 = new Matica();
+
+            for (int i = 0; i < M1.NovaMatica().GetLength(0); i++)
             {
-                for (int j = 0; j < matica1.matica.GetLength(1); j++)
+                for (int j = 0; j < M1.NovaMatica().GetLength(1); j++)
                 {
-                    Console.WriteLine(matica1.matica[i, j]);
+                    Console.WriteLine(M1.NovaMatica()[i, j]);
                 }
             }
 
             Console.WriteLine("---------------");
 
-            Matica matica2 = new Matica();
-            for (int i = 0; i < matica2.matica.GetLength(0); i++)
+            Matica M2 = new Matica();
+
+            for (int i = 0; i < M2.NovaMatica().GetLength(0); i++)
             {
-                for (int j = 0; j < matica2.matica.GetLength(1); j++)
+                for (int j = 0; j < M2.NovaMatica().GetLength(1); j++)
                 {
-                    Console.WriteLine(matica2.matica[i, j]);
+                    Console.WriteLine(M2.NovaMatica()[i, j]);
                 }
             }
 
             Console.WriteLine("--------plus-------");
 
-            Matica matica3 = matica1 + matica2;
+            Matica M3 = M1 + M2;
 
-            for (int i = 0; i < matica3.matica.GetLength(0); i++)
+            for (int i = 0; i < M3.NovaMatica().GetLength(0); i++)
             {
-                for (int j = 0; j < matica3.matica.GetLength(1); j++)
+                for (int j = 0; j < M3.NovaMatica().GetLength(1); j++)
                 {
-                    Console.WriteLine(matica3.matica[i, j]);
+                    Console.WriteLine(M3.NovaMatica()[i, j]);
                 }
             }
 
             Console.WriteLine("--------minus-------");
 
-            Matica matica4 = matica1 - matica2;
+            Matica M4 = M1 - M2;
 
-            for (int i = 0; i < matica4.matica.GetLength(0); i++)
+            for (int i = 0; i < M4.NovaMatica().GetLength(0); i++)
             {
-                for (int j = 0; j < matica4.matica.GetLength(1); j++)
+                for (int j = 0; j < M4.NovaMatica().GetLength(1); j++)
                 {
-                    Console.WriteLine(matica4.matica[i, j]);
+                    Console.WriteLine(M4.NovaMatica()[i, j]);
                 }
             }
 
             Console.WriteLine("-------nasobenie--------");
 
-            Matica matica5 = matica1 * matica2;
+            Matica M5 = M1 * M2;
 
-            for (int i = 0; i < matica5.matica.GetLength(0); i++)
+            for (int i = 0; i < M5.NovaMatica().GetLength(0); i++)
             {
-                for (int j = 0; j < matica5.matica.GetLength(1); j++)
+                for (int j = 0; j < M5.NovaMatica().GetLength(1); j++)
                 {
-                    Console.WriteLine(matica5.matica[i, j]);
+                    Console.WriteLine(M5.NovaMatica()[i, j]);
                 }
             }
 
             Console.WriteLine("---------------");
+
+            Matica M6 = new Matica();
+
+            for (int i = 0; i < M6.MaticaIdentity().GetLength(0); i++)
+            {
+                for (int j = 0; j < M6.NovaMatica().GetLength(1); j++)
+                {
+                    Console.WriteLine(M6.MaticaIdentity()[i, j]);
+                }
+            }
 
 
             Console.ReadKey();
